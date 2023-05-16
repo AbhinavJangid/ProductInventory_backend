@@ -7,9 +7,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+@jakarta.persistence.Entity
 public class Product {
 
-	
 	public Product() {
 		super();
 		this.id = id;
@@ -23,7 +24,8 @@ public class Product {
 		this.title = title;
 		this.description = description;
 	}
-	@Id
+
+	@jakarta.persistence.Id
 	private String id;
 	private String title;
 	private String description;

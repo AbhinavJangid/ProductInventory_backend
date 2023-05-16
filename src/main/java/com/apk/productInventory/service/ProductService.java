@@ -9,12 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.apk.productInventory.entity.Product;
+import com.apk.productInventory.repository.ProductRepository;
 
 @Service
 public class ProductService {
 
-
-	//private ProductRepository productRepository;
+	@Autowired
+	private ProductRepository productRepository;
 	
 	
 	
@@ -28,18 +29,18 @@ public class ProductService {
 	
 	
 	public List<Product> getAllProducts(){
-		return products;
+		//return products;
 	
-		/*
-		 * List<Product> products = new ArrayList<>();
-		 * productRepository.findAll().forEach(products::add); return products;
-		 */
+		
+		  List<Product> products = new ArrayList<>();
+		  productRepository.findAll().forEach(products::add); return products;
+		 
 		
 	}
 	
 	public void addProduct(Product product) {
-		products.add(product);
-		/* productRepository.save(product); */
+		//products.add(product);
+		productRepository.save(product); 
 		
 	}
 	
