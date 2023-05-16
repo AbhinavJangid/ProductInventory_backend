@@ -2,6 +2,7 @@ package com.apk.productInventory.controller;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,7 +33,7 @@ public class ProductController {
 	}
 	
 	
-	  @RequestMapping("/products/{id}") public Product getProduct(@PathVariable
+	  @RequestMapping("/products/{id}") public Optional<Product> getProduct(@PathVariable
 	  String id) { return  productService.getProduct(id); }
 	  
 	  

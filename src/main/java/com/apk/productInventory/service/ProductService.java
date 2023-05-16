@@ -16,53 +16,28 @@ public class ProductService {
 
 	@Autowired
 	private ProductRepository productRepository;
-	
-	
-	
-	  private List<Product> products = new ArrayList<>(Arrays.asList(
-			  	new Product( "one","aphone", "okay"), 
-			  	new Product( "two","pphone", "okay"),
-			  	new Product( "three","kphone", "okay")
-			  
-			  ));
-	 
-	
-	
-	public List<Product> getAllProducts(){
-		//return products;
-	
-		
-		  List<Product> products = new ArrayList<>();
-		  productRepository.findAll().forEach(products::add); return products;
-		 
-		
+
+	public List<Product> getAllProducts() {
+		List<Product> products = new ArrayList<>();
+		productRepository.findAll().forEach(products::add);
+		return products;
 	}
-	
+
 	public void addProduct(Product product) {
-		//products.add(product);
-		productRepository.save(product); 
-		
+		productRepository.save(product);
 	}
-	
-	
-	  public Product getProduct(String id) { 
-		  return (products.stream().filter( p -> p.getId().equals(id)).findFirst().get()); 
-		  
-	  }
-	  
-	  
-	  
-	  public void updateProduct(String id, Product product) { for( int i = 0; i <
-	  products.size(); i++) { Product p = products.get(i); if(p.getId().equals(id))
-	  { products.set(i, product); return; }
-	  
-	  }
-	  
-	  }
-	  
-	  public void deleteProduct(String id) { products.removeIf(p ->
-	  p.getId().equals(id));
-	  
-	  }
-	 
+
+	public Optional<Product> getProduct(String id) {
+		return productRepository.findById(id);
+	}
+
+	public void updateProduct(String id, Product product) {
+		productRepository.save(product);
+	}
+
+	public void deleteProduct(String id) {
+		productRepository.deleteById(id);
+
+	}
+
 }
