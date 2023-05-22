@@ -3,12 +3,9 @@ package com.apk.productInventory.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-
-@jakarta.persistence.Entity
+//@jakarta.persistence.Entity
+@Entity
 public class Product {
 
 	public Product() {
@@ -25,7 +22,7 @@ public class Product {
 		this.description = description;
 	}
 
-	@jakarta.persistence.Id
+	@Id
 	private String id;
 	private String title;
 	private String description;

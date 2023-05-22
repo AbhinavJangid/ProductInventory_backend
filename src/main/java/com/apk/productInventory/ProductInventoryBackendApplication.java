@@ -8,17 +8,17 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
 //@ComponentScan({"com.apk.productInventory.repository"})
-@SpringBootApplication
 //@EnableAutoConfiguration
 //@EnableJpaRepositories(basePackages = "com.apk.productInventory.repository")
 //@EntityScan("com.apk.productInventory.entity")
+
+
+@SpringBootApplication
 public class ProductInventoryBackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductInventoryBackendApplication.class, args);
 		System.out.println("Something");
-		//Jai ho padmini mata di
-		//Namaskaram :hand emojiyou
 		
 	}
 
